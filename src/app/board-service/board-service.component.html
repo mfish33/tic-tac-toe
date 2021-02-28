@@ -1,0 +1,11 @@
+<h1 *ngIf="!boardTracker.winner">It is {{boardTracker.player}}'s turn</h1>
+<h1 *ngIf="boardTracker.winner">{{boardTracker.winner}} has won the game</h1>
+<div class="board">
+    <app-square 
+        *ngFor="let val of boardTracker.squares;let i = index" 
+        [value]="val" 
+        (click)="boardTracker.makeMove(i)">
+    </app-square>
+</div>
+<button *ngIf="boardTracker.winner" (click)="boardTracker.newGame()">New Game</button>
+<button [routerLink]="['']">Go Home</button>

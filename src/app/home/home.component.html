@@ -1,0 +1,7 @@
+<h1>Tic Tac Toe Home</h1>
+
+<button [routerLink]="['play']" >Play Game</button>
+
+<div class="miniBoard">
+    <button *ngFor="let val of boardTracker.squares">{{val}}</button>
+</div>
